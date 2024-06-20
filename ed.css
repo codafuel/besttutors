@@ -18,32 +18,53 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: 600;
+    
+}
+.logo:hover{
+    color: #f4b400;
 }
 
 nav ul {
+nav ul {
     list-style: none;
-    display: flex;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s;
+    font-size: 1rem;
+    position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f4b400;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    
+}
+
+nav ul li a:hover{ 
     color: #f4b400;
-       
-   
-}
-
+    
 
 
 
@@ -179,7 +200,34 @@ nav ul li a:hover {
     border: dashed 1px gray;
 }
 
+/* Testimonials Section */
 
+#testimonials h2 { 
+    text-align:center;
+    }
+
+#testimonials .testimonial_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#testimonials .testimonial {
+    max-width: 600px;
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#testimonials .testimonial:hover {
+    transform: scale(1.05);
+}
+    
+    
 
 /* Contact Section */
 #contact {
@@ -252,7 +300,14 @@ form button:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+ .contact-info-item:hover {
+    transform: scale(1.05);
+ }
+    
+.contact-info-item h3, .contact-info-item p, .contact-info-item .fas {
+animation: slideUp 4s ease-in-out;
+}
+    
 .contact-info-item h3 {
     font-size: 1.25rem;
     margin-bottom: 10px;
@@ -303,32 +358,7 @@ footer {
 
 
 
-/* Testimonials Section */
 
-#testimonials h2 { 
-    text-align:center;
-    }
-
-#testimonials .testimonial_card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#testimonials .testimonial {
-    max-width: 600px;
-    background: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-#testimonials .testimonial:hover {
-    transform: scale(1.05);
-}
 
 
 /* Responsive Styles */
