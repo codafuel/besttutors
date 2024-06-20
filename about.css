@@ -1,28 +1,30 @@
-/* Global Styles */
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #f9f9f9;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    color: #fff;
 }
 
-header .logo {
+.logo {
     font-size: 1.5rem;
     font-weight: 600;
+    
+}
+.logo:hover{
+    color: #f4b400;
 }
 
+nav ul {
 nav ul {
     list-style: none;
     padding: 0;
@@ -63,127 +65,349 @@ nav ul li a:hover::after {
 nav ul li a:hover{ 
     color: #f4b400;
     
+
+
+
+/* Slider Styles */
+.slider {
+    display: flex;
+    overflow: hidden;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
 }
 
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+/* About Section */
 #about {
-    padding: 100px 20px 20px; /* Adjust padding to account for the fixed header */
-    background: url('background.jpg') no-repeat center center/cover;
-    color: #333;
+    padding: 50px;
+    background-color: #f9f9f9;
     text-align: center;
-    animation: fadeIn 2s ease-in-out;
 }
 
-#about .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.8);
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* Courses Section */
+
+#courses h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.course_card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 15px;
+    gap: 10px; /* Space between the cards */
+    max-height: 500px; /* Fixed height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Inner shadow for scrollable area */
+   
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    flex: 1 1 calc(22% - 10px); /* Three cards per row with a 10px margin */
+    margin: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 15px; /* Curved borders */
+    overflow: hidden; /* Ensure child elements respect border-radius */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px; /* Curved top corners */
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 24px; /* Discounted price size */
+    color: green; /* Discounted price color */
+    margin: 10px 0;
+}
+
+.original-price {
+    font-size: 14px; /* Original price size */
+    text-decoration: line-through;
+    color: red;
+    margin-right: 10px;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; /* Curved bottom corners */
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+/* Animation for bouncing effect */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.card:hover {
+    animation: bounce 0.6s infinite alternate; /* Apply bouncing animation */
+    border: dashed 1px gray;
+}
+
+/* Testimonials Section */
+
+#testimonials h2 { 
+    text-align:center;
+    }
+
+#testimonials .testimonial_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#testimonials .testimonial {
+    max-width: 600px;
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#testimonials .testimonial:hover {
+    transform: scale(1.05);
+}
+    
+    
+
+/* Contact Section */
+#contact {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    width: 300px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Contact Information Section */
+#contact-info {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-info-item {
+    flex: 1 1 calc(25% - 20px);
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+ .contact-info-item:hover {
+    transform: scale(1.05);
+ }
+    
+.contact-info-item h3, .contact-info-item p, .contact-info-item .fas {
+animation: slideUp 4s ease-in-out;
+}
+    
+.contact-info-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
 
-#about h1, #about h2 {
+.contact-info-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-info-item a {
     color: #333;
-    margin-bottom: 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-#about h1::after, #about h2::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    bottom: 0;
-    left: -100%;
-    transition: left 0.3s ease-in-out;
-}
-
-#about h1:hover::after, #about h2:hover::after {
-    left: 0;
-}
-
-#about p, #about ul {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-#about ul li {
-    margin-bottom: 10px;
-}
-
-#about .video {
-    margin-top: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-}
-
-footer .social-media a {
-    color: white;
-    margin: 0 10px;
     text-decoration: none;
-    font-size: 1.2rem;
-    position: relative;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-footer .social-media a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #f4b400;
-    bottom: -2px;
-    left: 0;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-footer .social-media a:hover::after {
-    transform: scaleX(1);
-}
-footer .social-media a:hover{
+.contact-info-item a:hover {
     color: #f4b400;
 }
 
-/* Keyframes for fadeIn animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.contact-info-item h3 i {
+    margin-right: 10px;
+    color: #f4b400;
 }
 
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
+
+
+/* Footer Styles */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
 }
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #f4b400;
+}
+
+
+
+
+
+
 
 /* Responsive Styles */
-@media (max-width: 600px) {
-    header, footer {
-        text-align: center;
+@media (max-width: 768px) {
+  
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+       
     }
 
     nav ul {
         flex-direction: row;
+        align-items: flex-start; 
     }
 
     nav ul li {
-        margin: 5px 5px;
+        margin: 5px;
+        text-align: center;
     }
 
-    #about .container {
-        padding: 15px;
+    .slider {
+        height: 300px;
+    }
+
+    .slide img {
+        height: 300px;
+    }
+
+     #about, #courses, #contact, #testimonials {
+        padding: 30px; 
+        
+    } 
+
+    .course, .testimonial {
+        width: 100%;
+    }
+
+    form input, form textarea {
+        width: 100%;
+    }
+       .card {
+        flex: 1 1 calc( 48% - 20px); /* Two cards per row on mobile */
+    }
+}
+
+@media (max-width: 450px) {
+    .card {
+        flex: 1 1 100%; /* One card per row on very small screens */
     }
 }
