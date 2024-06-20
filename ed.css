@@ -367,7 +367,7 @@ footer {
 
 footer .made:hover{
     color: #f4b400;
-    animation: rubberBand 1s;
+    animation: slideUp 1s;
 }
 
 footer .made::after {
@@ -384,7 +384,7 @@ footer .made::after {
 }
 
 footer .made:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(0.6);
     
 }
 
