@@ -391,7 +391,10 @@ footer .made:hover::after {
 
 
 
-
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
